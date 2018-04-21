@@ -16,8 +16,13 @@ req = Request(YTS_AG_API+YTS_AG_PARMS, headers={'User-Agent': 'Mozilla/5.0'})
 with urlopen(req) as url:
     data = json.loads(url.read().decode())
 
-print('Title'.ljust(60) + 'Year'.ljust(6) + 'Rating'.ljust(10) + 'URL')
 for i in data['data']['movies']:
-    print(str(i['title']).ljust(60) + str(i['year']).ljust(6) + str(i['rating']).ljust(10) + str(i['url']).ljust(4))
+    print('Title:   ' + str(i['title']))
+    print('Year:    ' + str(i['year']))
+    print('Rating:  ' + str(i['rating']))
+    print('Summary: ' + str(i['summary']))
+    print('URL:     ' + str(i['url']))
+    print('Torrent: ' + str(i['torrents'][0]['url']))
+    print('###############################################')
 
     
