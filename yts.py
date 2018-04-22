@@ -4,6 +4,9 @@ import ssl
 import textwrap
 import argparse
 
+#yts.ag API URL
+YTS_AG_API = "https://yts.am/api/v2/list_movies.json"
+
 # 11 is the width of the first expression of print eg: 'Title    : '
 WIDTH_LENGTH = 11
 
@@ -16,10 +19,16 @@ LIMIT = 10
 #Minumun IMDB rating 
 RATING = 7
 
-genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
-          'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
-          'Horror', 'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi',
-          'Short', 'Sport', 'Superhero', 'Thriller', 'War', 'Western']
+#Default genre
+GENRE = 'Documentary'
+
+#Default sort by
+SORT_BY = 'date_added'
+
+#genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
+#          'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
+#          'Horror', 'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi',
+#          'Short', 'Sport', 'Superhero', 'Thriller', 'War', 'Western']
 sort_by = ['title', 'year', 'rating', 'peers', 'seeds', 'download_count',
            'like_count', 'date_added']
 
@@ -27,10 +36,10 @@ parser = argparse.ArgumentParser(
                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("-r", "--rating", help="Minumun IMDB rating", type=float,
                     default = RATING)
-parser.add_argument("-g", "--genre", help="Genres", type=str, choices=genres,
-                    default = genres[6])
+#parser.add_argument("-g", "--genre", help="Genres", type=str, choices=genres,
+#                    default = GENRE)
 parser.add_argument("-s", "--sort", help="Sort results by", type=str,
-                    choices=sort_by, default=sort_by[-1])
+                    choices=sort_by, default=SORT_BY)
 parser.add_argument("-l", "--limit", help="Result limit [1-50]", type=int,
                     default = LIMIT)
 
@@ -43,11 +52,11 @@ It is set to 10")
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
-YTS_AG_API = "https://yts.am/api/v2/list_movies.json"
+
 
 # Full list of parms: https://yts.am/api
 YTS_AG_PARMS = ("?minimum_rating=" + str(args.rating) +
-                "&sort_by=" + str(args.sort) + "&genre=" + str(args.genre) +
+                "&sort_by=" + str(args.sort) + "&genre=" + str(GENRE) +
                 "&limit=" + str(args.limit))
 
 req = Request(YTS_AG_API+YTS_AG_PARMS, headers={'User-Agent': 'Mozilla/5.0'})
