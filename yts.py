@@ -33,14 +33,14 @@ sort_by = ['title', 'year', 'rating', 'peers', 'seeds', 'download_count',
            'like_count', 'date_added']
 
 parser = argparse.ArgumentParser(
-                    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument("-r", "--rating", help="Minumun IMDB rating", type=float,
+                    formatter_class = argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument("-r", "--rating", help = "Minumun IMDB rating", type = float,
                     default = RATING)
-#parser.add_argument("-g", "--genre", help="Genres", type=str, choices=genres,
+#parser.add_argument("-g", "--genre", help="Genres", type=str.lower, choices=genres,
 #                    default = GENRE)
-parser.add_argument("-s", "--sort", help="Sort results by", type=str,
-                    choices=sort_by, default=SORT_BY)
-parser.add_argument("-l", "--limit", help="Result limit [1-50]", type=int,
+parser.add_argument("-s", "--sort", help = "Sort results by", type = str.lower,
+                    choices = sort_by, default = SORT_BY)
+parser.add_argument("-l", "--limit", help = "Result limit [1-50]", type = int,
                     default = LIMIT)
 
 args = parser.parse_args()
@@ -56,7 +56,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 # Full list of parms: https://yts.am/api
 YTS_AG_PARMS = ("?minimum_rating=" + str(args.rating) +
-                "&sort_by=" + str(args.sort) + "&genre=" + str(GENRE) +
+                "&sort_by=" + str(args.sort.lower()) + "&genre=" + str(GENRE) +
                 "&limit=" + str(args.limit))
 
 req = Request(YTS_AG_API+YTS_AG_PARMS, headers={'User-Agent': 'Mozilla/5.0'})
