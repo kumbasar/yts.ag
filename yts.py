@@ -5,7 +5,7 @@ import textwrap
 import argparse
 import sys
 
-#yts.ag API URL
+# yts.ag API URL
 YTS_AG_API = "https://yts.am/api/v2/list_movies.json"
 
 # 11 is the width of the first expression of print eg: 'Title    : '
@@ -17,20 +17,20 @@ QUALITY = '1080p'
 # Default result limit [1-50]
 LIMIT = 10
 
-#Minumun IMDB rating 
+# Minumun IMDB rating 
 RATING = 7
 
-#Default genre
+# Default genre
 GENRE = 'Documentary'
 
-#Default sort by
+# Default sort by
 SORT_BY = 'date_added'
 
-#TODO: Genres and sort_by should be defined in a json file
-#genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
-#          'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
-#          'Horror', 'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi',
-#          'Short', 'Sport', 'Superhero', 'Thriller', 'War', 'Western']
+# TODO: Genres and sort_by should be defined in a json file
+# genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
+#           'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
+#           'Horror', 'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi',
+#           'Short', 'Sport', 'Superhero', 'Thriller', 'War', 'Western']
 sort_by = ['title', 'year', 'rating', 'peers', 'seeds', 'download_count',
            'like_count', 'date_added']
 
@@ -38,7 +38,7 @@ parser = argparse.ArgumentParser(
                     formatter_class = argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("-r", "--rating", help = "Minumun IMDB rating [1,10]", type = float,
                     default = RATING)
-#parser.add_argument("-g", "--genre", help="Genres", type=str.lower, choices=genres,
+# parser.add_argument("-g", "--genre", help="Genres", type=str.lower, choices=genres,
 #                    default = GENRE)
 parser.add_argument("-s", "--sort", help = "Sort results by", type = str.lower,
                     choices = sort_by, default = SORT_BY)
@@ -80,10 +80,10 @@ for i in data['data']['movies']:
     print(textwrap.fill(('Summary  : ' + str(i['summary'])), width = lineWidth,
           subsequent_indent = ' ' * WIDTH_LENGTH))
     print('URL      : ' + str(i['url']))
-    #Set the first as default torrent URL
+    # Set the first as default torrent URL
     torrent_url = str(i['torrents'][0]['url'])
     torrent_quality = str(i['torrents'][0]['quality'])
-    #Search for desired quality
+    # Search for desired quality
     for torrent in i['torrents']:
         if torrent['quality'] == QUALITY:
             torrent_url = str(torrent['url'])
