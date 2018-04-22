@@ -6,9 +6,15 @@ import argparse
 
 # 11 is the width of the first expression of print eg: 'Title    : '
 WIDTH_LENGTH = 11
+
 # Desired quality. If not found, the first torrent will be displayed.
 QUALITY = '1080p'
 
+# Default result limit [1-50]
+LIMIT = 10
+
+#Minumun IMDB rating 
+RATING = 7
 
 genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
           'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
@@ -20,20 +26,20 @@ sort_by = ['title', 'year', 'rating', 'peers', 'seeds', 'download_count',
 parser = argparse.ArgumentParser(
                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("-r", "--rating", help="Minumun IMDB rating", type=float,
-                    default=7)
+                    default = RATING)
 parser.add_argument("-g", "--genre", help="Genres", type=str, choices=genres,
-                    default=genres[6])
+                    default = genres[6])
 parser.add_argument("-s", "--sort", help="Sort results by", type=str,
                     choices=sort_by, default=sort_by[-1])
 parser.add_argument("-l", "--limit", help="Result limit [1-50]", type=int,
-                    default=10)
+                    default = LIMIT)
 
 args = parser.parse_args()
 
 if args.limit > 50 or args.limit < 1:
-    args.limit = 1
-    print("Given value is not within the boundaries. \
-It is set to default value")
+    args.limit = LIMIT
+    print("Result limit value is not within the boundaries. \
+It is set to 10")
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
