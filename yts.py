@@ -3,6 +3,7 @@ import json
 import ssl
 import textwrap
 import argparse
+import sys
 
 #yts.ag API URL
 YTS_AG_API = "https://yts.am/api/v2/list_movies.json"
@@ -25,6 +26,7 @@ GENRE = 'Documentary'
 #Default sort by
 SORT_BY = 'date_added'
 
+#TODO: Genres and sort_by should be defined in a json file
 #genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
 #          'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
 #          'Horror', 'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi',
@@ -63,11 +65,13 @@ YTS_AG_PARMS = ("?minimum_rating=" + str(args.rating) +
                 "&limit=" + str(args.limit))
 
 req = Request(YTS_AG_API+YTS_AG_PARMS, headers={'User-Agent': 'Mozilla/5.0'})
-
-with urlopen(req) as url:
-    data = json.loads(url.read().decode())
-
-lineWidth = len(str(data['data']['movies'][0]['torrents'][0]['url'])) + WIDTH_LENGTH
+try: 
+    with urlopen(req) as url:
+        data = json.loads(url.read().decode())
+    lineWidth = len(str(data['data']['movies'][0]['torrents'][0]['url'])) + WIDTH_LENGTH
+except:
+    print("Error: Couldn't fetch anthing.") 
+    sys.exit(1)
 
 for i in data['data']['movies']:
     print('Title    : ' + str(i['title']))
