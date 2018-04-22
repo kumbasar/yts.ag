@@ -6,6 +6,9 @@ import argparse
 
 # 11 is the width of the first expression of print eg: 'Title    : '
 WIDTH_LENGTH = 11
+# Desired quality. If not found, the first torrent will be displayed.
+QUALITY = '1080p'
+
 
 genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
           'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
@@ -57,10 +60,13 @@ for i in data['data']['movies']:
     print('URL      : ' + str(i['url']))
     #Set the first as default torrent URL
     torrent_url = str(i['torrents'][0]['url'])
-    #Search for 1080p
+    torrent_quality = str(i['torrents'][0]['quality'])
+    #Search for desired quality
     for torrent in i['torrents']:
-        if torrent['quality'] == '1080p':
+        if torrent['quality'] == QUALITY:
             torrent_url = str(torrent['url'])
+            torrent_quality = QUALITY
             break
     print('Torrent  : ' + torrent_url)
+    print('Quality  : ' + torrent_quality)
     print('#' * lineWidth)
