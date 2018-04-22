@@ -12,6 +12,24 @@ Only Python3 is required.
 $ python3 yts.py
 ```
 
+Supported Arguments:
+```sh
+ghost:yts.ag kumbasar$ python3 yts.py --help
+usage: yts.py [-h] [-r RATING]
+              [-s {title,year,rating,peers,seeds,download_count,like_count,date_added}]
+              [-l LIMIT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -r RATING, --rating RATING
+                        Minumun IMDB rating [1,10] (default: 7)
+  -s {title,year,rating,peers,seeds,download_count,like_count,date_added}, --sort {title,year,rating,peers,seeds,download_count,like_count,date_added}
+                        Sort results by (default: date_added)
+  -l LIMIT, --limit LIMIT
+                        Result limit [1-50] (default: 10)
+ghost:yts.ag kumbasar$
+```
+
 ### Output
 ```sh
 ghost:yts.ag kumbasar$ python3 yts.py
