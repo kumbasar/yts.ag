@@ -34,7 +34,7 @@ sort_by = ['title', 'year', 'rating', 'peers', 'seeds', 'download_count',
 
 parser = argparse.ArgumentParser(
                     formatter_class = argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument("-r", "--rating", help = "Minumun IMDB rating", type = float,
+parser.add_argument("-r", "--rating", help = "Minumun IMDB rating [1,10]", type = float,
                     default = RATING)
 #parser.add_argument("-g", "--genre", help="Genres", type=str.lower, choices=genres,
 #                    default = GENRE)
@@ -48,11 +48,14 @@ args = parser.parse_args()
 if args.limit > 50 or args.limit < 1:
     args.limit = LIMIT
     print("Result limit value is not within the boundaries. \
-It is set to 10")
+It is set to 10.")
+
+if args.rating > 10 or args.rating < 1:
+    args.rating = RATING
+    print("Minimum IMDB rating value is not within the boundaries. \
+It is set to 7.")
 
 ssl._create_default_https_context = ssl._create_unverified_context
-
-
 
 # Full list of parms: https://yts.am/api
 YTS_AG_PARMS = ("?minimum_rating=" + str(args.rating) +
