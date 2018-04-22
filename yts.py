@@ -8,7 +8,6 @@ genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
           'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
           'Horror', 'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi',
           'Short', 'Sport', 'Superhero', 'Thriller', 'War', 'Western']
-
 sort_by = ['title', 'year', 'rating', 'peers', 'seeds', 'download_count',
            'like_count', 'date_added']
 
@@ -54,5 +53,12 @@ for i in data['data']['movies']:
     print(textwrap.fill(('Summary  : ' + str(i['summary'])), width=lineWidth,
           subsequent_indent=' '*11))
     print('URL      : ' + str(i['url']))
-    print('Torrent  : ' + str(i['torrents'][0]['url']))
+    #Set the first as default torrent URL
+    torrent_url = str(i['torrents'][0]['url'])
+    #Search for 1080p
+    for torrent in i['torrents']:
+        if torrent['quality'] == '1080p':
+            torrent_url = str(torrent['url'])
+            break
+    print('Torrent  : ' + torrent_url)
     print('#'*lineWidth)
