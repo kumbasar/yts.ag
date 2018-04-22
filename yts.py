@@ -35,15 +35,15 @@ sort_by = ['title', 'year', 'rating', 'peers', 'seeds', 'download_count',
            'like_count', 'date_added']
 
 parser = argparse.ArgumentParser(
-                    formatter_class = argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument("-r", "--rating", help = "Minumun IMDB rating [1,10]", type = float,
-                    default = RATING)
+                    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument("-r", "--rating", help="Minumun IMDB rating [1,10]", type=float,
+                    default=RATING)
 # parser.add_argument("-g", "--genre", help="Genres", type=str.lower, choices=genres,
 #                    default = GENRE)
-parser.add_argument("-s", "--sort", help = "Sort results by", type = str.lower,
-                    choices = sort_by, default = SORT_BY)
-parser.add_argument("-l", "--limit", help = "Result limit [1-50]", type = int,
-                    default = LIMIT)
+parser.add_argument("-s", "--sort", help="Sort results by", type=str.lower,
+                    choices=sort_by, default=SORT_BY)
+parser.add_argument("-l", "--limit", help="Result limit [1-50]", type=int,
+                    default=LIMIT)
 
 args = parser.parse_args()
 
@@ -77,8 +77,8 @@ for i in data['data']['movies']:
     print('Title    : ' + str(i['title']))
     print('Year     : ' + str(i['year']))
     print('Rating   : ' + str(i['rating']))
-    print(textwrap.fill(('Summary  : ' + str(i['summary'])), width = lineWidth,
-          subsequent_indent = ' ' * WIDTH_LENGTH))
+    print(textwrap.fill(('Summary  : ' + str(i['summary'])), width=lineWidth,
+          subsequent_indent=' ' * WIDTH_LENGTH))
     print('URL      : ' + str(i['url']))
     # Set the first as default torrent URL
     torrent_url = str(i['torrents'][0]['url'])
