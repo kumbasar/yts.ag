@@ -4,6 +4,9 @@ import ssl
 import textwrap
 import argparse
 
+# 11 is the width of the first expression of print eg: 'Title    : '
+WIDTH_LENGTH = 11
+
 genres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
           'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'History',
           'Horror', 'Music', 'Musical', 'Mystery', 'Romance', 'Sci-Fi',
@@ -43,15 +46,14 @@ req = Request(YTS_AG_API+YTS_AG_PARMS, headers={'User-Agent': 'Mozilla/5.0'})
 with urlopen(req) as url:
     data = json.loads(url.read().decode())
 
-# 11 is the width of the first expression of print eg: 'Title    : '
-lineWidth = len(str(data['data']['movies'][0]['torrents'][0]['url'])) + 11
+lineWidth = len(str(data['data']['movies'][0]['torrents'][0]['url'])) + WIDTH_LENGTH
 
 for i in data['data']['movies']:
     print('Title    : ' + str(i['title']))
     print('Year     : ' + str(i['year']))
     print('Rating   : ' + str(i['rating']))
-    print(textwrap.fill(('Summary  : ' + str(i['summary'])), width=lineWidth,
-          subsequent_indent=' '*11))
+    print(textwrap.fill(('Summary  : ' + str(i['summary'])), width = lineWidth,
+          subsequent_indent = ' ' * WIDTH_LENGTH))
     print('URL      : ' + str(i['url']))
     #Set the first as default torrent URL
     torrent_url = str(i['torrents'][0]['url'])
@@ -61,4 +63,4 @@ for i in data['data']['movies']:
             torrent_url = str(torrent['url'])
             break
     print('Torrent  : ' + torrent_url)
-    print('#'*lineWidth)
+    print('#' * lineWidth)
