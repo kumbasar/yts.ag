@@ -1,15 +1,21 @@
 # YTS.ag 
 
-yts.py is a simple tool which fetches torrent movies using https://yts.am/api 
+yts.py is a simple tool which fetches torrent movies using https://yts.mx/api 
 
 ### Installation
 
-Only Python3 is required.
+Python3 is required.
 
 ### Execution
 
 ```sh
 $ python3 yts.py
+```
+
+or 
+
+```sh
+$ ./yts.py
 ```
 
 ### Output
@@ -23,8 +29,8 @@ Summary  : Documentary about Rohani, an 80-year-old hunter who dives like a fish
            against the spectacular backdrop of the Togian Islands in Indonesia
            where he grew up, this award-winning film recreates events that capture
            the extraordinary turning points in his life, as a hunter and as a man.
-URL      : https://yts.am/movie/jago-a-life-underwater-2015
-Torrent  : https://yts.am/torrent/download/E265EE51967592D9632B37042AEE801CB52A4D4E
+URL      : https://yts.mx/movie/jago-a-life-underwater-2015
+Torrent  : https://yts.mx/torrent/download/E265EE51967592D9632B37042AEE801CB52A4D4E
 Quality  : 1080p
 ###################################################################################
 Title    : Patton Oswalt: Annihilation
@@ -34,8 +40,8 @@ Summary  : Patton Oswald, despite a personal tragedy, produces his best standup
            yet. Focusing on the tribulations of the Trump era and life after the
            loss of a loved one, Patton Oswald continues his journey to contribute
            joy to the world.
-URL      : https://yts.am/movie/patton-oswalt-annihilation-2017
-Torrent  : https://yts.am/torrent/download/EDE583C37097A78B22BCD01D932CBDB85031622A
+URL      : https://yts.mx/movie/patton-oswalt-annihilation-2017
+Torrent  : https://yts.mx/torrent/download/EDE583C37097A78B22BCD01D932CBDB85031622A
 Quality  : 1080p
 ###################################################################################
 Title    : New York Doll
@@ -44,8 +50,8 @@ Rating   : 7.9
 Summary  : A recovering alcoholic and recently converted Mormon, Arthur "Killer"
            Kane, of the rock band The New York Dolls, is given a chance at
            reuniting with his band after 30 years.
-URL      : https://yts.am/movie/new-york-doll-2005
-Torrent  : https://yts.am/torrent/download/F0A08A2A1E033940DE0F43AC3429792EEB6EA758
+URL      : https://yts.mx/movie/new-york-doll-2005
+Torrent  : https://yts.mx/torrent/download/F0A08A2A1E033940DE0F43AC3429792EEB6EA758
 Quality  : 1080p
 ###################################################################################
 Title    : Tom Segura: Disgraceful
@@ -53,8 +59,8 @@ Year     : 2018
 Rating   : 7.5
 Summary  : Comedian Tom Segura rants about funny things about pop culture and the
            way of living in 2018.
-URL      : https://yts.am/movie/tom-segura-disgraceful-2018
-Torrent  : https://yts.am/torrent/download/2E68311C00EF2728980760C458D600C2847C84E5
+URL      : https://yts.mx/movie/tom-segura-disgraceful-2018
+Torrent  : https://yts.mx/torrent/download/2E68311C00EF2728980760C458D600C2847C84E5
 Quality  : 1080p
 ###################################################################################
 Title    : The Secret Rules of Modern Living: Algorithms
@@ -63,8 +69,8 @@ Rating   : 7.5
 Summary  : Professor Marcus du Sautoy demystifies the hidden world of algorithms
            and reveals where these 2,000-year-old problem solvers came from, how
            they work, and what they have achieved.
-URL      : https://yts.am/movie/the-secret-rules-of-modern-living-algorithms-2015
-Torrent  : https://yts.am/torrent/download/9AE81BE3E686B5004B2AAEF959467815F15E18D8
+URL      : https://yts.mx/movie/the-secret-rules-of-modern-living-algorithms-2015
+Torrent  : https://yts.mx/torrent/download/9AE81BE3E686B5004B2AAEF959467815F15E18D8
 Quality  : 1080p
 ###################################################################################
 Title    : Farewell Ferris Wheel
@@ -75,8 +81,8 @@ Summary  : Farewell, Ferris Wheel examines the link between America's carnival
            carnival's labor. However, increased regulations are compromising this
            longstanding connection, putting both the industry and its workers in
            jeopardy.
-URL      : https://yts.am/movie/farewell-ferris-wheel-2016
-Torrent  : https://yts.am/torrent/download/EF4B897719A102928EF620772CAB2701FC46BF45
+URL      : https://yts.mx/movie/farewell-ferris-wheel-2016
+Torrent  : https://yts.mx/torrent/download/EF4B897719A102928EF620772CAB2701FC46BF45
 Quality  : 1080p
 ###################################################################################
 Title    : Andre the Giant
@@ -84,8 +90,8 @@ Year     : 2018
 Rating   : 8
 Summary  : A look at the life and career of professional wrestler André Roussimoff,
            who gained notoriety in the 1980s as Andre the Giant.
-URL      : https://yts.am/movie/andre-the-giant-2018
-Torrent  : https://yts.am/torrent/download/0D20CD2D38021250B6C65A3C94532962960CFBBD
+URL      : https://yts.mx/movie/andre-the-giant-2018
+Torrent  : https://yts.mx/torrent/download/0D20CD2D38021250B6C65A3C94532962960CFBBD
 Quality  : 1080p
 ###################################################################################
 Title    : Faces Places
@@ -101,8 +107,8 @@ Summary  : Agnes Varda, one of the leading lights of France's honored French New
            Along the way, the old cinematic veteran and the young artistic idealist
            enjoy an odd friendship as they chat and explore their views on the
            world as only they can.
-URL      : https://yts.am/movie/faces-places-2017
-Torrent  : https://yts.am/torrent/download/9A12ED3D763FF85E3A0FC4D7E6F1054126C24B7B
+URL      : https://yts.mx/movie/faces-places-2017
+Torrent  : https://yts.mx/torrent/download/9A12ED3D763FF85E3A0FC4D7E6F1054126C24B7B
 Quality  : 1080p
 ###################################################################################
 Title    : Sons of Ben
@@ -117,8 +123,8 @@ Summary  : After many rumors of an MLS team arriving in Philadelphia never
            time than that and start a movement that would not only change the
            soccer landscape in Philadelphia forever, but also help revive a
            community that had been struggling for decades.
-URL      : https://yts.am/movie/sons-of-ben-2016
-Torrent  : https://yts.am/torrent/download/21FF655570FF2769D303A722AC5D34FE69AEAB75
+URL      : https://yts.mx/movie/sons-of-ben-2016
+Torrent  : https://yts.mx/torrent/download/21FF655570FF2769D303A722AC5D34FE69AEAB75
 Quality  : 1080p
 ###################################################################################
 Title    : The Redeemed and the Dominant: Fittest on Earth
@@ -135,8 +141,8 @@ Summary  : In 2017 the fittest athletes on Earth took on the unknown and unknowa
            even stronger than they realized. The best among them enter the pantheon
            of CrossFit giants and earn the right to call themselves the "Fittest on
            Earth."
-URL      : https://yts.am/movie/the-redeemed-and-the-dominant-fittest-on-earth-2018
-Torrent  : https://yts.am/torrent/download/B93B0BF64A8523860958C01AED7C73D301F039A2
+URL      : https://yts.mx/movie/the-redeemed-and-the-dominant-fittest-on-earth-2018
+Torrent  : https://yts.mx/torrent/download/B93B0BF64A8523860958C01AED7C73D301F039A2
 Quality  : 1080p
 ###################################################################################
 ```

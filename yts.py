@@ -8,7 +8,7 @@ import argparse
 import sys
 
 #yts.ag API URL
-YTS_AG_API = "https://yts.am/api/v2/list_movies.json"
+YTS_AG_API = "https://yts.mx/api/v2/list_movies.json"
 
 # 11 is the width of the first expression of print eg: 'Title    : '
 WIDTH_LENGTH = 11
@@ -61,7 +61,7 @@ It is set to 7.")
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
-# Full list of parms: https://yts.am/api
+# Full list of parms: https://yts.mx/api
 YTS_AG_PARMS = ("?minimum_rating=" + str(args.rating) +
                 "&sort_by=" + str(args.sort.lower()) + "&genre=" + str(GENRE) +
                 "&limit=" + str(args.limit))
