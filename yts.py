@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from urllib.request import Request, urlopen
 import json
 import ssl
