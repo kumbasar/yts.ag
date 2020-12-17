@@ -14,7 +14,7 @@ Python3 is required.
 $ python3 yts.py
 ```
 
-or 
+or
 
 ```sh
 $ ./yts.py
