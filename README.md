@@ -6,7 +6,9 @@ yts.py is a simple tool which fetches torrent movies using https://yts.mx/api
 
 ### Installation
 
-Python3 is required.
+```bash
+pip3 install -r requirements.txt
+```
 
 ### Execution
 
