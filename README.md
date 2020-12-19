@@ -1,16 +1,17 @@
 # YTS.ag 
 
 [![Codeship Status for kumbasar/yts.ag](https://app.codeship.com/projects/6a08f421-0062-4b15-a797-98363e9a9caa/status?branch=master)](https://app.codeship.com/projects/422001)
+![Github Actions Status](https://github.com/kumbasar/yts.ag/workflows/yts/badge.svg)
 
-yts.py is a simple tool which fetches torrent movies using https://yts.mx/api 
+`yts.py` is a simple movie listening tool using [yts.mx API](https://yts.mx/api) 
 
-### Installation
+## Installation
 
 ```bash
 pip3 install -r requirements.txt
 ```
 
-### Execution
+## Execution
 
 ```sh
 $ python3 yts.py
